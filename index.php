@@ -117,7 +117,7 @@
     </nav>
 
     <main class="container-fluid mt-4">
-        <div class="row justify-content-start"> <div class="col-lg-8 offset-lg-1"> <div class="book-frame">
+        <div class="row justify-content-start"> <div class="col-lg-5 offset-lg-1"> <div class="book-frame">
                     <article class="poem-text">
                         <?php if (!isset($_GET['k'])): ?>
                             <p>
@@ -141,6 +141,7 @@
                                 Tymczasem przenoś moję duszę utęsknioną...
                             </p>
                         <?php else: ?>
+
                             <?php 
                                 $k = intval($_GET['k']);
                                 if(file_exists("./k$k.html")) include "./k$k.html"; 
@@ -148,18 +149,59 @@
                             ?>
                         <?php endif; ?>
                     </article>
-                </div>
-            </div>
-
-            <div class="col-lg-3 image-aside">
+                </div> 
+                        </div> 
+                        <div class="col-lg-5 image-aside">
                 <div class="sticky-top" style="top: 100px;">
                     <img src="./Tadek.png" alt="Ilustracja" class="img-fluid rounded shadow">
                     <p class="mt-3 small text-center text-muted italic">
                         „Kraj lat dziecinnych! On zawsze zostanie<br>Święty i czysty jak pierwsze kochanie”
                     </p>
-                </div>
-            </div>
+                
+    <?php 
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                            $nick = $_POST['nick'];
+                            $email = $_POST['email'];
+                            $comment = $_POST['comment'];
 
+                        echo '<div class ="alert alert-danger alert-dismissible fade show" role+"alert">
+                                Przesłane:<ul>
+                                <li>Pseudonim: '.$nick.'</li>
+                                <li>Adres e-mail: '.$email.'</li>
+                                <li>Komentarz: '.$comment.'</li>
+                            </ul>
+                            Komentarz czeka na weryfikację!  
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+                            $row = [$nick, $email, $comment, 'unverified'];
+                            $fp = fopen('comments.csv', 'a');
+                            fputcsv($fp, $row, ';', '"', '');
+                            fclose($fp);
+                    }
+         
+                    echo '
+                                <form action="" method="post">
+                                <div class="mb-3">
+                                    <label for="nick" class="form-label">Pseudonim</label>
+                                    <input name="nick" type="text" class="form-control" id="nick" placeholder="podaj pseudonim">
+                                    </div>
+                                    <div class="mb-3">
+                                    <label for="email" class="form-label">Adres e-mail</label>
+                                    <input name="email" type="email" class="form-control" id="email" placeholder="podaj adres e-mail">
+                                    </div>
+                                    <div class="mb-3">
+                                    <label for="comment" class="form-label">Komentarz</label>
+                                    <textarea name="comment" class="form-control" id="comment" rows="3"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="submit" class="btn btn-danger">Prześlij</button>
+                                    </div>
+                                </form/>';
+                
+            ?>
+
+            </div>
+       
         </div>
     </main>
 
@@ -167,4 +209,6 @@
         <p>&copy; 2026 - Małgorzata Zgama | ANS w Nowym Targu</p>
     </footer>
 
-    <script src="https://cdn.
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
