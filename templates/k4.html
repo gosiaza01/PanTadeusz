@@ -1,3 +1,7 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
   <h1>KSIĘGA CZWARTA <br>DYPLOMATYKA I ŁOWY</h1>
   <h2>Treść:</h2>
   <h3>Zjawisko w papilotach budzi Tadeusza - Za późne
@@ -6,8 +10,7 @@
   Trzy strzały - Spór Sagalasówki z Sanguszkówką, rozstrzygniony na stronę jednorurki
   Horeszkowskiej - Bigos - Wojskiego powieść o pojedynku Dowejki z Domejką, przerwana
   szczuciem kota - Koniec powieści o Dowejce i Domejce.</h3>
-<button type="button" class="btn btn-danger float-end" onclick="hide_show()">Rozwiń</button>
-<div id="book_content" style="display: none;">
+<div id="book_content">
   <p>&nbsp;</p>
   <p>Rówienniki litewskich wielkich kniaziów, drzewa</p>
   <p>Białowieży, Świtezi, Ponar, Kuszelewa!</p>
@@ -1135,3 +1138,4 @@
   <p>Pobudowawszy karczmę nazwali N i e d ź w i a d e
   k&quot;.</p>
 </div>
+{% endblock %}

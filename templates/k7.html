@@ -1,3 +1,6 @@
+{% extends "layout.html" %}
+
+{% block content %}
   <h1>KSIĘGA SIÓDMA<br>RADA</h1>
   <h2>Treść:</h2>
   <h3>Zbawienne rady Bartka, zwanego Prusak - Głos żołnierski Maćka
@@ -5,8 +8,7 @@
   rozcina - Rzecz Gerwazego, z której okazują się wielkie skutki wymowy sejmowej -
   Protestacja starego Maćka - Nagłe przybycie posiłków wojennych zrywa naradę - Hejże
   na Soplice!</h3>
-<button type="button" class="btn btn-danger float-end" onclick="hide_show()">Rozwiń</button>
-<div id="book_content" style="display: none;">
+<div id="book_content">
   <p>&nbsp;</p>
   <p>Z kolei Bartek poseł rzecz swą wyprowadzał;</p>
   <p>Ten, że często na strugach do Królewca chadzał,</p>
@@ -645,3 +647,4 @@
   <p>Puścili się w cwał, krzycząc: &quot;Hajże na Soplice!&quot;</p>
   <p>&nbsp;</p>
 </div>
+{% endblock %}

@@ -1,3 +1,6 @@
+{% extends "layout.html" %}
+
+{% block content %}
   <h1>KSIĘGA ÓSMA<br>
   ZAJAZD</h1>
   <h2>Treść:</h2>
@@ -5,8 +8,7 @@
   scena w pokoju Sędziego - Tadeusz, chcąc zręcznie wyplątać się, wpada w wielkie
   kłopoty - Nowa Dydo- Zajazd - Ostatnia woźnieńska protestacja - Hrabia zdobywa
   Soplicowo - Szturm i rzeź - Gerwazy piwnicznym - Uczta zajazdowa.</h3>
-<button type="button" class="btn btn-danger float-end" onclick="hide_show()">Rozwiń</button>
-<div id="book_content" style="display: none;">
+<div id="book_content">
   <p>&nbsp;</p>
   <p>Przed burzą bywa chwila cicha i ponura,</p>
   <p>Kiedy nad głowy ludzi przyleciawszy chmura</p>
@@ -910,3 +912,4 @@
   <p>Tak zwyciężców zwyciężył w końcu sen, brat śmierci.</p>
   <p>&nbsp;</p>
 </div>
+{% endblock %}

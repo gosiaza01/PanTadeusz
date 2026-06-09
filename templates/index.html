@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="content-wrapper">
+            <p>
+                <span class="drop-cap">L</span>itwo! Ojczyzno moja! ty jesteś jak zdrowie.<br>
+                Ile cię trzeba cenić, ten tylko się dowie,<br>
+                Kto cię stracił. Dziś piękność twą w całej ozdobie<br>
+                Widzę i opisuję, bo tęsknię po tobie...
+            </p>
+
+            <p class="poem-body">
+                Panno święta, co Jasnej bronisz Częstochowy<br>
+                I w Ostrej świecisz Bramie! Ty, co gród zamkowy<br>
+                Nowogródzki ochraniasz z jego wiernym ludem!<br>
+                Jak mnie dziecko do zdrowia powróciłaś cudem...
+            </p>
+            
+            <p>
+                (Gdy od płaczącej matki pod Twoją opiekę<br>
+                Ofiarowany, martwą podniosłem powiekę<br>
+                I zaraz mogłem pieszo do Twych świątyń progu<br>
+                Iść za wrócone życie podziękować Bogu),<br>
+                Tak nas powrócisz cudem na Ojczyzny łono.<br>
+                Tymczasem przenoś moję duszę utęsknioną...
+            </p>
+        </div>
+
+        <div class="image-container">
+            <img src="{{url_for('static', filename='Tadek.png')}}" alt="Ilustracja do Inwokacji - Pan Tadeusz">
+        </div>
+
+    {% endblock %}
